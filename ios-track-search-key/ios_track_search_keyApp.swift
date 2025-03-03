@@ -11,7 +11,7 @@ import SwiftUI
 struct ios_track_search_keyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
