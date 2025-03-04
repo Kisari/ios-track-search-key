@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var viewModel = KeyWordViewModel()
+    @StateObject private var viewModel = KeyWordViewModel(keyWordManager: .init(capacity: 4))
     @State private var newKeyWordText: String = ""
 
     var body: some View {

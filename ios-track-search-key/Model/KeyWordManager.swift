@@ -21,8 +21,8 @@ class KeyWordManager: KeyWordStack {
     }
     
     private var config: Configuration
-    public var keyWordList: [KeyWord]
-    public var currentSize: Int
+    private var keyWordList: [KeyWord]
+    private var currentSize: Int
   
     init(capacity: Int = 10) {
         self.config = Configuration(capacity: capacity)
@@ -33,6 +33,7 @@ class KeyWordManager: KeyWordStack {
     func getCurrentSize() -> Int {
         return currentSize
     }
+    
     
     func getKeyWordList() -> [KeyWord]{
         return keyWordList
