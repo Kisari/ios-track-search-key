@@ -5,11 +5,13 @@
 //  Created by Minh Truong on 3/3/25.
 //
 
+// View
+
 import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var viewModel = KeyWordViewModel(keyWordManager: .init(capacity: 4))
+    @StateObject private var viewModel = KeyWordDDLViewModel()
     @State private var newKeyWordText: String = ""
 
     var body: some View {

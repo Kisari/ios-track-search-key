@@ -35,16 +35,16 @@ final class ios_track_search_keyTests: XCTestCase {
     // MARK: - Test Case 1: Success adding 3 new keys to fullfill the capacity
 
     func testAddingFullfilKeyWordSuccess() {
-        let keyWordManager: KeyWordManager = .init(capacity: 3)
+        let KeyWordStackManager: KeyWordStackManager = .init(capacity: 3)
 
-        keyWordManager.processKeyWord(mockData[0])
-        keyWordManager.processKeyWord(mockData[1])
-        keyWordManager.processKeyWord(mockData[2])
+        KeyWordStackManager.processKeyWord(mockData[0])
+        KeyWordStackManager.processKeyWord(mockData[1])
+        KeyWordStackManager.processKeyWord(mockData[2])
 
-        XCTAssertTrue(keyWordManager.getCurrentSize() == 3, "Error: Expected true with 3 items in total")
+        XCTAssertTrue(KeyWordStackManager.getCurrentSize() == 3, "Error: Expected true with 3 items in total")
 
         XCTAssertEqual(
-            keyWordManager.getKeyWordList()[1].key,
+            KeyWordStackManager.getKeyWordList()[1].key,
             mockData[1].key,
             "Error: Expected key with the same name"
         )
@@ -53,16 +53,16 @@ final class ios_track_search_keyTests: XCTestCase {
     // MARK: - Test Case 2: Success swap the existing key in front WHEN FULL
 
     func testSwapExistingKeyWordWhenFullSuccess() {
-        let keyWordManager: KeyWordManager = .init(capacity: 3)
+        let KeyWordStackManager: KeyWordStackManager = .init(capacity: 3)
 
-        keyWordManager.processKeyWord(mockData[0])
-        keyWordManager.processKeyWord(mockData[1])
-        keyWordManager.processKeyWord(mockData[2])
+        KeyWordStackManager.processKeyWord(mockData[0])
+        KeyWordStackManager.processKeyWord(mockData[1])
+        KeyWordStackManager.processKeyWord(mockData[2])
 
         // Move banana to the front
-        keyWordManager.processKeyWord(mockData[1])
+        KeyWordStackManager.processKeyWord(mockData[1])
         XCTAssertEqual(
-            keyWordManager.getKeyWordList()[0].key,
+            KeyWordStackManager.getKeyWordList()[0].key,
             "banana",
             "Error: Expected key 'banana' must in front of the list"
         )
@@ -73,16 +73,16 @@ final class ios_track_search_keyTests: XCTestCase {
     // MARK: - Test Case 3: Success swap the existing key in front WHEN NOT FULL
 
     func testSwapExistingKeyWordWhenNotFullSuccess() {
-        let keyWordManager: KeyWordManager = .init(capacity: 4)
+        let KeyWordStackManager: KeyWordStackManager = .init(capacity: 4)
 
-        keyWordManager.processKeyWord(mockData[0])
-        keyWordManager.processKeyWord(mockData[1])
-        keyWordManager.processKeyWord(mockData[2])
+        KeyWordStackManager.processKeyWord(mockData[0])
+        KeyWordStackManager.processKeyWord(mockData[1])
+        KeyWordStackManager.processKeyWord(mockData[2])
 
         // Move apple to the front
-        keyWordManager.processKeyWord(mockData[0])
+        KeyWordStackManager.processKeyWord(mockData[0])
         XCTAssertEqual(
-            keyWordManager.getKeyWordList()[0].key,
+            KeyWordStackManager.getKeyWordList()[0].key,
             "apple",
             "Error: Expected key 'apple' must in front of the list"
         )
@@ -92,24 +92,24 @@ final class ios_track_search_keyTests: XCTestCase {
     // MARK: - Test Case 4: Success add new key word WHEN FULL
 
     func testAddKeyWordWhenFullSuccess() {
-        let keyWordManager: KeyWordManager = .init(capacity: 3)
+        let KeyWordStackManager: KeyWordStackManager = .init(capacity: 3)
 
-        keyWordManager.processKeyWord(mockData[0])
-        keyWordManager.processKeyWord(mockData[1])
-        keyWordManager.processKeyWord(mockData[2])
+        KeyWordStackManager.processKeyWord(mockData[0])
+        KeyWordStackManager.processKeyWord(mockData[1])
+        KeyWordStackManager.processKeyWord(mockData[2])
 
         // Add new "date" key word
-        keyWordManager.processKeyWord(mockData[3])
+        KeyWordStackManager.processKeyWord(mockData[3])
         XCTAssertEqual(
-            keyWordManager.getKeyWordList()[0].key,
+            KeyWordStackManager.getKeyWordList()[0].key,
             "date",
             "Error: Expected key 'date' must be added in front of the list"
         )
         
         // Add new "elephant" key word
-        keyWordManager.processKeyWord(mockData[4])
+        KeyWordStackManager.processKeyWord(mockData[4])
         XCTAssertEqual(
-            keyWordManager.getKeyWordList()[0].key,
+            KeyWordStackManager.getKeyWordList()[0].key,
             "elephant",
             "Error: Expected key 'elephant' must be added in front of the list"
         )

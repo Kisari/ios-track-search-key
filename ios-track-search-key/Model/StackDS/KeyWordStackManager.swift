@@ -1,9 +1,11 @@
 //
-//  KeyWordManager.swift
+//  KeyWordStackManager.swift
 //  ios-track-search-key
 //
 //  Created by Minh Truong on 3/3/25.
 //
+
+// Domain
 
 import Foundation
 
@@ -15,7 +17,7 @@ protocol KeyWordStack {
     func searchInList(_ keyWord: KeyWord) -> Int
 }
 
-class KeyWordManager: KeyWordStack {
+class KeyWordStackManager: KeyWordStack {
     struct Configuration {
         let capacity: Int
     }
@@ -23,10 +25,9 @@ class KeyWordManager: KeyWordStack {
     private var config: Configuration
     private var keyWordList: [KeyWord]
     private var currentSize: Int
-  
-    init(capacity: Int = 10) {
+    init(capacity: Int) {
         self.config = Configuration(capacity: capacity)
-        self.keyWordList = []
+        self.keyWordList = .init()
         self.currentSize = 0
     }
     

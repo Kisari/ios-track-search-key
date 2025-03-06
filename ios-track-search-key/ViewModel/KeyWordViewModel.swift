@@ -5,27 +5,29 @@
 //  Created by Minh Truong on 3/3/25.
 //
 
+// View Model
+
 import Foundation
 
-class KeyWordViewModel: ObservableObject {
-    private var keyWordManager: KeyWordManager
+class KeyWordStackViewModel: ObservableObject {
+    private var KeyWordStackManager: KeyWordStackManager
     
     @Published var keyWordList: [KeyWord]
     @Published var currentSize: Int
     
-    init(keyWordManager: KeyWordManager = KeyWordManager()) {
-        self.keyWordManager = keyWordManager
-        self.keyWordList = keyWordManager.getKeyWordList()
-        self.currentSize = keyWordManager.getCurrentSize()
+    init(KeyWordStackManager: KeyWordStackManager = .init(capacity: 10)) {
+        self.KeyWordStackManager = KeyWordStackManager
+        self.keyWordList = KeyWordStackManager.getKeyWordList()
+        self.currentSize = KeyWordStackManager.getCurrentSize()
     }
     
     private func updateViewState() {
-        keyWordList = keyWordManager.getKeyWordList()
-        currentSize = keyWordManager.getCurrentSize()
+        keyWordList = KeyWordStackManager.getKeyWordList()
+        currentSize = KeyWordStackManager.getCurrentSize()
     }
     
     func processKeyWord(_ keyWord: KeyWord) {
-        keyWordManager.processKeyWord(keyWord)
+        KeyWordStackManager.processKeyWord(keyWord)
         updateViewState()
     }
 }

@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		118A6A992D7860030008A5F1 /* KeyWordDLLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A6A982D7860030008A5F1 /* KeyWordDLLManager.swift */; };
+		11C879A12D7947D9002AEFA6 /* KeyWordDDLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C879A02D7947D9002AEFA6 /* KeyWordDDLViewModel.swift */; };
 		11C8D5A82D75AA7A00B60DE7 /* ios_track_search_keyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8D5A72D75AA7A00B60DE7 /* ios_track_search_keyApp.swift */; };
 		11C8D5AA2D75AA7A00B60DE7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8D5A92D75AA7A00B60DE7 /* HomeView.swift */; };
 		11C8D5AC2D75AA7C00B60DE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C8D5AB2D75AA7C00B60DE7 /* Assets.xcassets */; };
 		11C8D5B92D75AA7C00B60DE7 /* ios_track_search_keyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8D5B82D75AA7C00B60DE7 /* ios_track_search_keyTests.swift */; };
 		11C8D5D42D75B24000B60DE7 /* KeyWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8D5D32D75B24000B60DE7 /* KeyWord.swift */; };
 		11C8D5DA2D75B4FC00B60DE7 /* KeyWordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8D5D92D75B4FC00B60DE7 /* KeyWordViewModel.swift */; };
-		11C8D5DC2D75B5A100B60DE7 /* KeyWordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8D5DB2D75B5A100B60DE7 /* KeyWordManager.swift */; };
+		11C8D5DC2D75B5A100B60DE7 /* KeyWordStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8D5DB2D75B5A100B60DE7 /* KeyWordStackManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		118A6A982D7860030008A5F1 /* KeyWordDLLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWordDLLManager.swift; sourceTree = "<group>"; };
+		11C879A02D7947D9002AEFA6 /* KeyWordDDLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWordDDLViewModel.swift; sourceTree = "<group>"; };
 		11C8D5A42D75AA7A00B60DE7 /* ios-track-search-key.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-track-search-key.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C8D5A72D75AA7A00B60DE7 /* ios_track_search_keyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_track_search_keyApp.swift; sourceTree = "<group>"; };
 		11C8D5A92D75AA7A00B60DE7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -35,7 +39,7 @@
 		11C8D5B82D75AA7C00B60DE7 /* ios_track_search_keyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_track_search_keyTests.swift; sourceTree = "<group>"; };
 		11C8D5D32D75B24000B60DE7 /* KeyWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWord.swift; sourceTree = "<group>"; };
 		11C8D5D92D75B4FC00B60DE7 /* KeyWordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWordViewModel.swift; sourceTree = "<group>"; };
-		11C8D5DB2D75B5A100B60DE7 /* KeyWordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWordManager.swift; sourceTree = "<group>"; };
+		11C8D5DB2D75B5A100B60DE7 /* KeyWordStackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWordStackManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11C8799E2D7939EC002AEFA6 /* StackDS */ = {
+			isa = PBXGroup;
+			children = (
+				11C8D5DB2D75B5A100B60DE7 /* KeyWordStackManager.swift */,
+			);
+			path = StackDS;
+			sourceTree = "<group>";
+		};
+		11C8799F2D7939F9002AEFA6 /* DoubleLinkedListDS */ = {
+			isa = PBXGroup;
+			children = (
+				118A6A982D7860030008A5F1 /* KeyWordDLLManager.swift */,
+			);
+			path = DoubleLinkedListDS;
+			sourceTree = "<group>";
+		};
 		11C8D59B2D75AA7A00B60DE7 = {
 			isa = PBXGroup;
 			children = (
@@ -105,8 +125,9 @@
 		11C8D5D22D75B22F00B60DE7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				11C8799F2D7939F9002AEFA6 /* DoubleLinkedListDS */,
+				11C8799E2D7939EC002AEFA6 /* StackDS */,
 				11C8D5D32D75B24000B60DE7 /* KeyWord.swift */,
-				11C8D5DB2D75B5A100B60DE7 /* KeyWordManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				11C8D5D92D75B4FC00B60DE7 /* KeyWordViewModel.swift */,
+				11C879A02D7947D9002AEFA6 /* KeyWordDDLViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -220,8 +242,10 @@
 			files = (
 				11C8D5DA2D75B4FC00B60DE7 /* KeyWordViewModel.swift in Sources */,
 				11C8D5AA2D75AA7A00B60DE7 /* HomeView.swift in Sources */,
-				11C8D5DC2D75B5A100B60DE7 /* KeyWordManager.swift in Sources */,
+				11C8D5DC2D75B5A100B60DE7 /* KeyWordStackManager.swift in Sources */,
+				118A6A992D7860030008A5F1 /* KeyWordDLLManager.swift in Sources */,
 				11C8D5D42D75B24000B60DE7 /* KeyWord.swift in Sources */,
+				11C879A12D7947D9002AEFA6 /* KeyWordDDLViewModel.swift in Sources */,
 				11C8D5A82D75AA7A00B60DE7 /* ios_track_search_keyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
