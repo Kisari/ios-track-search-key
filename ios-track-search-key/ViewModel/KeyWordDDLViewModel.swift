@@ -8,7 +8,7 @@
 import Foundation
 
 
-class KeyWordDDLViewModel: ObservableObject {
+final class KeyWordDDLViewModel: ObservableObject {
     private var KeyWordDDLManager: KeyWordDLLManager
     
     @Published var keyWordList: [KeyWord]
@@ -16,12 +16,12 @@ class KeyWordDDLViewModel: ObservableObject {
     
     init(KeyWordDDLManager: KeyWordDLLManager = .init(capacity: 4)) {
         self.KeyWordDDLManager = KeyWordDDLManager
-        self.keyWordList = KeyWordDDLManager.DDLToArray()
+        self.keyWordList = KeyWordDDLManager.toArray()
         self.currentSize = KeyWordDDLManager.getCurrentSize()
     }
     
     private func updateViewState() {
-        keyWordList = KeyWordDDLManager.DDLToArray()
+        keyWordList = KeyWordDDLManager.toArray()
         currentSize = KeyWordDDLManager.getCurrentSize()
     }
     

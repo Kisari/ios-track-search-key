@@ -17,7 +17,7 @@ protocol KeyWordStack {
     func searchInList(_ keyWord: KeyWord) -> Int
 }
 
-class KeyWordStackManager: KeyWordStack {
+final class KeyWordStackManager: KeyWordStack {
     struct Configuration {
         let capacity: Int
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class KeyWordNode: Equatable {
+final class KeyWordNode: Equatable {
     var value: KeyWord
     var next: KeyWordNode?
     var prev: KeyWordNode?
@@ -23,7 +23,7 @@ class KeyWordNode: Equatable {
     }
 }
 
-class KeyWordDLLManager {
+final class KeyWordDLLManager {
     struct Configuration {
         let capacity: Int
     }
@@ -48,15 +48,13 @@ class KeyWordDLLManager {
         return head == nil
     }
     
-    func DDLToArray() -> [KeyWord] {
+    func toArray() -> [KeyWord] {
         var result = [KeyWord]()
         var currentNode = head
-        
         while let node = currentNode {
             result.append(node.value)
             currentNode = node.next
         }
-        
         return result
     }
     
@@ -67,7 +65,6 @@ class KeyWordDLLManager {
         }
         else {
             let newKeyWordNode = KeyWordNode(keyWord, head, nil)
-            
             head?.prev = newKeyWordNode
             head = newKeyWordNode
         }
@@ -84,13 +81,11 @@ class KeyWordDLLManager {
             tail = prev
             tail?.next = nil
         }
-        currentSize = currentSize -
-            1
+        currentSize = currentSize - 1
     }
     
     func findAndRemoveTheNode(_ keyWord: KeyWord) -> KeyWordNode? {
         var currentNode = head
-        
         while let node = currentNode {
             if node.value.key == keyWord.key {
                 if node === head {
@@ -105,8 +100,7 @@ class KeyWordDLLManager {
                     node.prev?.next = node.next
                     node.next?.prev = node.prev
                 }
-                currentSize = currentSize -
-                    1
+                currentSize = currentSize - 1
                 return node
             }
             currentNode = node.next
@@ -120,7 +114,6 @@ class KeyWordDLLManager {
             insertAtFront(removedNode.value)
             return
         }
-        
         if currentSize < config.capacity {
             insertAtFront(keyWord)
         }
